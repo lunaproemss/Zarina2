@@ -682,10 +682,10 @@ footer{background:var(--dark);padding:52px 0 28px}
 
 <!-- БЛОК 8 (НОВЫЙ) — скрины блогов без ссылок -->
 <style>
-.blog-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.blog-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
 .blog-shot{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sm);background:var(--white)}
-.blog-shot img{width:100%;height:340px;object-fit:cover;object-position:top;display:block}
-@media(max-width:860px){.blog-shots{grid-template-columns:1fr}.blog-shot img{height:auto}}
+.blog-shot img{width:100%;height:auto;display:block}
+@media(max-width:860px){.blog-shots{grid-template-columns:1fr}}
 </style>
 <section class="sec s-light">
   <div class="wrap">
@@ -1019,7 +1019,9 @@ footer{background:var(--dark);padding:52px 0 28px}
 <!-- КЕЙСЫ (Блок 5, переделан — большие карточки друг под другом) -->
 <style>
 .bigcase{background:var(--white);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sm);margin-bottom:28px}
-.bigcase-media{width:100%;height:380px;object-fit:cover;display:block}
+.bigcase-media-wrap{position:relative;height:420px;overflow:hidden;background:linear-gradient(135deg,var(--blue3),var(--blue))}
+.bigcase-media-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(30px) brightness(.7);transform:scale(1.15)}
+.bigcase-media{position:relative;width:100%;height:100%;object-fit:contain;display:block;z-index:1}
 .bigcase-body{padding:32px 34px}
 .bigcase-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .bigcase-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--bl));display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;font-weight:700;color:#fff;flex-shrink:0}
@@ -1041,7 +1043,10 @@ footer{background:var(--dark);padding:52px 0 28px}
     <div class="sh center fade"><div class="ey">Кейсы и отзывы</div><h2>Как наши партнёры запускают и развивают клининговые компании</h2></div>
 
     <div class="bigcase fade">
-      <img src="https://lunaproemss.github.io/Zarina/фото5.jpg" class="bigcase-media" style="object-position:center 15%" alt="Мария и Александр">
+      <div class="bigcase-media-wrap">
+        <div class="bigcase-media-bg" style="background-image:url('https://lunaproemss.github.io/Zarina/фото5.jpg')"></div>
+        <img src="https://lunaproemss.github.io/Zarina/фото5.jpg" class="bigcase-media" alt="Мария и Александр">
+      </div>
       <div class="bigcase-body">
         <div class="bigcase-head"><div class="bigcase-av">МА</div><div><div class="bigcase-name">Мария и Александр</div><div class="bigcase-city">г. Волгодонск</div></div></div>
         <div class="bigcase-title">Как семейная пара без опыта запустила клининг и вышла на оборот 250 000 ₽ за три месяца</div>
@@ -1070,7 +1075,10 @@ footer{background:var(--dark);padding:52px 0 28px}
     </div>
 
     <div class="bigcase fade" data-d="1">
-      <img src="https://lunaproemss.github.io/Zarina/12.jpg" class="bigcase-media" style="object-position:center 5%" alt="Алёна">
+      <div class="bigcase-media-wrap">
+        <div class="bigcase-media-bg" style="background-image:url('https://lunaproemss.github.io/Zarina/12.jpg')"></div>
+        <img src="https://lunaproemss.github.io/Zarina/12.jpg" class="bigcase-media" alt="Алёна">
+      </div>
       <div class="bigcase-body">
         <div class="bigcase-head"><div class="bigcase-av">АН</div><div><div class="bigcase-name">Алёна</div><div class="bigcase-city">г. Новосибирск</div></div></div>
         <div class="bigcase-title">Как действующий клининг увеличил оборот с 150 000 до 450 000 ₽ за два месяца</div>
@@ -1099,7 +1107,9 @@ footer{background:var(--dark);padding:52px 0 28px}
     </div>
 
     <div class="bigcase fade" data-d="2">
-      <video src="https://lunaproemss.github.io/Zarina/review1.mp4" class="bigcase-media" style="object-position:center 25%" controls playsinline></video>
+      <div class="bigcase-media-wrap">
+        <video src="https://lunaproemss.github.io/Zarina/review1.mp4" class="bigcase-media" controls playsinline></video>
+      </div>
       <div class="bigcase-body">
         <div class="bigcase-head"><div class="bigcase-av">ЮТ</div><div><div class="bigcase-name">Юлия</div><div class="bigcase-city">г. Тюмень</div></div></div>
         <div class="bigcase-title">Как Юлия открыла клининг с нуля и вышла на оборот 150 000 ₽ со второго месяца</div>
